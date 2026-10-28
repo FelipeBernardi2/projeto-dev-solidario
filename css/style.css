@@ -9,3 +9,289 @@
     --wpp:#25d366;
     --r:10px
 }
+
+/* Base para o CSS */
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 76px;
+}
+
+body {
+    font: 400 1rem/1.65 'Barlow', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--tx);
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+:focus-visible {
+    outline: 3px solid var(--or);
+    outline-offset: 3px;
+}
+
+h1, h2 {
+    font-family: 'Barlow Condensed', 'Barlow', sans-serif;
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: .01em;
+}
+
+h2 {
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    margin-bottom: 1.6rem;
+}
+
+h2::after {
+    content: "";
+    display: block;
+    width: 64px;
+    height: 5px;
+    background: var(--or);
+    margin-top: .7rem;
+}
+
+p+p {
+    margin-top: 1rem;
+}
+
+.sec {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 72px 20px;
+}
+
+.sub {
+    color: var(--mu);
+    margin: -.6rem 0 1.6rem;
+    max-width: 60ch;
+}
+
+/* Botões */
+.btn {
+    display: inline-block;
+    padding: 13px 26px;
+    border: 2px solid var(--or);
+    border-radius: 8px;
+    background: var(--or);
+    color: #111;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: filter .2s
+}
+
+.btn:hover {
+    filter: brightness(1.12);
+}
+
+.btn-wpp {
+    background: var(--wpp);
+    border-color: var(--wpp);
+    color: #06210f;
+}
+
+.btn-sm {
+    padding: 8px 16px;
+    font-size: .95rem;
+}
+
+/* Header */
+.topo {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 12px 20px;
+    background: rgba(12, 12, 12, .95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--bd);
+}
+
+.logo {
+    flex: 1;
+}
+
+.logo span {
+    display: inline-block;
+    padding: 4px 16px;
+    border: 1px dashed var(--mu);
+    border-radius: 6px;
+    font: 700 1.3rem 'Barlow Condensed', sans-serif;
+}
+
+.links {
+    display: flex;
+    gap: 26px;
+}
+
+.links a {
+    padding: 6px 0;
+    border-bottom: 2px solid transparent;
+}
+
+.links a:hover {
+    border-color: var(--or);
+}
+
+.dir {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 16px;
+}
+
+.menu-toggle {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.hamb {
+    display: grid;
+    gap: 5px;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.hamb span {
+    width: 26px;
+    height: 2px;
+    background: var(--tx);
+}
+
+.painel {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 20px;
+    min-width: 230px;
+    flex-direction: column;
+    padding: 8px;
+    background-color: var(--card);
+    border: 1px solid var(--bd);
+    border-radius: var(--r);
+}
+
+.painel a {
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.painel a:hover {
+    background-color: var(--or);
+    color: #111;
+}
+
+.menu-toggle:checked~.painel {
+    display: flex;
+}
+
+.fechar-menu {
+    display: none;
+}
+
+.menu-toggle:checked~.fechar-menu {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 40;
+}
+
+.painel {
+    z-index: 50;
+}
+
+/* Topo com as fotos passando */
+.hero {
+    position: relative;
+    min-height: calc(100svh - 66px);
+    display: grid;
+    place-items: center;
+    padding: 72px 20px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: rgba(0, 0, 0, .62)
+}
+
+.slide {
+    position: absolute;
+    inset: 0;
+    background: #222 center/cover;
+    opacity: 0;
+    animation: fade 18s infinite;
+}
+
+.slide:nth-child(2) {
+    animation-delay: 6s;
+}
+
+.slide:nth-child(3) {
+    animation-delay: 12s;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    8%,
+    33% {
+        opacity: 1;
+    }
+
+    41%,
+    100% {
+        opacity: 0;
+    }
+}
+
+.hero-txt {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+
+.hero h1 {
+    font-size: clamp(2.6rem, 7vw, 5rem);
+    margin-bottom: 1.2rem;
+}
+
+.hero p {
+    max-width: 54ch;
+    margin: 0 auto 2rem;
+    color: #e6e2dc;
+    font-size: 1.15rem;
+}
+
+.acoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+}
