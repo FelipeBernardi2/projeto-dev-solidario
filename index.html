@@ -12,5 +12,62 @@
 </head>
 <body>
     
+    <!-- Header da Página -->
+    <header class="topo">
+        <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Abrir menu">
+
+        <!-- Quando a logo chegar trocar o span por img <img src="img/logo.png" alt="Nome da Empresa"> -->
+        <a class="logo" href="#inicio">
+            <span>LOGO</span>
+        </a>
+
+        <nav class="links" aria-label="Principal">
+            <a href="#servicos">Serviços</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#contato">Contato</a>
+        </nav>
+
+        <div class="dir">
+            <a class="btn btn-wpp btn-sm" href="https://wa.me/5544997585153?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento.">WhatsApp</a>
+            <label for="menu_toggle" class="hamb" aria-label="Abrir ou fechar o menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+        </div>
+
+        <nav class="painel" aria-label="Menu completo">
+            <a href="#servicos">Serviços</a>
+            <a href="#portfolio">Portfólio</a>
+            <a href="#parcerias">Parcerias</a>
+            <a href="#sobre">Sobre a empresa</a>
+            <a href="#como-funciona">Como funciona</a>
+            <a href="#depoimentos">Depoimentos</a>
+            <a href="#faq">Perguntas frequentes</a>
+            <a href="#localizacao">Localização</a>
+            <a href="#orcamento">Orçamento</a>
+        </nav>
+    </header>
+
+    <label for="menu-toggle" class="fechar-menu"></label>
+
+    <main>
+        <!-- Topo da Página com as fotos de fundo -->
+        <!-- Quando chegar, trocar as imagens!! (melhores fachadas) -->
+        <section class="hero" id="inicio">
+            <div class="slide" style="background-image:url(img/hero-1.jpg)"></div>
+            <div class="slide" style="background-image:url(img/hero-2.jpg)"></div>
+            <div class="slide" style="background-image:url(img/hero-3.jpg)"></div>
+            <div class="hero-txt">
+                <h1>Do projeto à instalação, a fachada do seu negócio em um só lugar</h1>
+                <p>Mais de 10 anos de experiência, desde 2015. Sediados em Maringá/PR, atendemos projetos em todo o Brasil</p>
+                <div class="acoes">
+                    <a class="btn" href="#orcamento">Pedir orçamento</a>
+                    <a class="btn btn-wpp" target="_blank" rel="noopener noreferrer" href="https://wa.me/5544997585153?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20falar%20com%20voc%C3%AAs.">Falar no WhatsApp</a>
+                </div>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
