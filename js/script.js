@@ -1,7 +1,7 @@
-// Número do WhatsApp (código do país + DDD + número, sem espaços)
+// Número de telefone
 var NUMERO = "5544997585153";
 
-// Formulário: junta nome + mensagem e abre o WhatsApp com o texto pronto
+// Formulário: junta nome + mensagem e abre o WhatsApp
 document.getElementById("form-orc").addEventListener("submit", function (e) {
   e.preventDefault();
   var nome = this.nome.value.trim();
