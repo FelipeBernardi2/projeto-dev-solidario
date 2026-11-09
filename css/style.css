@@ -295,3 +295,317 @@ p+p {
     gap: 12px;
     justify-content: center;
 }
+
+/* GRADES */
+.g2, .g3, .g4 {
+    display: grid;
+    gap: 18px;
+}
+
+.g2 {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.g3 {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.g4 {
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+}
+
+.g2 img, .gal img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    border-radius: var(--r);
+}
+
+/* Serviços */
+
+.card {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    border: 1px solido var(--bd);
+    border-radius: var(--r);
+    background: #222 center/cover;
+    transition: border-color .2s;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(transparent 35%, rgba(0, 0, 0, .88));
+}
+
+.card span {
+    position: relative;
+    padding: 18px;
+    font: 700 1.7rem 'Barlow Condensed', sans-serif;
+}
+
+.card:hover {
+    border-color: var(--or);
+}
+
+/* Parcerias */
+.parc {
+    display: grid;
+    place-items: center;
+    height: 96px;
+    padding: 14px;
+    background: var(--card);
+    border: 1px solid var(--bd);
+    border-radius: var(--r)
+}
+
+.parc img {
+    max-height: 100%;
+    object-fit: contain
+}
+
+/* Sobre */
+.sobre {
+    display: grid;
+    gap: 36px;
+    align-items: center
+}
+
+.foto {
+    width: 240px;
+    height: 240px;
+    margin: auto;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--or)
+}
+
+@media(min-width:760px) {
+    .sobre {
+        grid-template-columns: 260px 1fr
+    }
+}
+
+/* Como Funciona */
+.passos {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    padding: 0;
+    list-style: none;
+    counter-reset: p
+}
+
+.passos li {
+    counter-increment: p;
+    padding: 22px 16px;
+    background: var(--card);
+    border: 1px solid var(--bd);
+    border-radius: var(--r);
+    color: var(--mu);
+    font-size: .95rem
+}
+
+.passos li::before {
+    content: counter(p);
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    margin-bottom: 12px;
+    border-radius: 50%;
+    background: var(--or);
+    color: #111;
+    font-weight: 600
+}
+
+.passos strong {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--tx);
+    font-size: 1.1rem
+}
+
+/* Depoimentos */
+.dep {
+    padding: 26px;
+    background: var(--card);
+    border-left: 4px solid var(--or);
+    border-radius: var(--r)
+}
+
+.est {
+    margin-bottom: 10px;
+    color: var(--or);
+    letter-spacing: 3px
+}
+
+.dep p {
+    margin-bottom: 14px
+}
+
+.dep cite {
+    color: var(--mu);
+    font-size: .92rem;
+    font-style: normal
+}
+
+/* FAQ e Mapa */
+.duo {
+    display: grid;
+    gap: 40px
+}
+
+@media(min-width:900px) {
+    .duo {
+        grid-template-columns: 1fr 1fr
+    }
+}
+
+details {
+    margin-bottom: 10px;
+    padding: 16px 20px;
+    background: var(--card);
+    border: 1px solid var(--bd);
+    border-radius: var(--r)
+}
+
+summary {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    list-style: none
+}
+
+summary::after {
+    content: "+";
+    color: var(--or);
+    font-size: 1.4rem;
+    line-height: 1
+}
+
+details[open] summary::after {
+    content: "–"
+}
+
+details p {
+    margin-top: 10px;
+    color: var(--mu)
+}
+
+.mapa {
+    width: 100%;
+    height: 340px;
+    border: 0;
+    border-radius: var(--r)
+}
+
+/* Formulário */
+form {
+    display: grid;
+    gap: 16px;
+    max-width: 640px
+}
+
+label {
+    display: grid;
+    gap: 6px;
+    font-weight: 600
+}
+
+input, textarea {
+    width: 100%;
+    padding: 14px;
+    background: var(--card);
+    border: 1px solid var(--bd);
+    border-radius: 8px;
+    color: var(--tx);
+    font: inherit;
+    font-weight: 400
+}
+
+textarea {
+    min-height: 140px;
+    resize: vertical
+}
+
+form .btn {
+    justify-self: start
+}
+
+/* Footer */
+.rod {
+    padding: 40px 20px;
+    border-top: 1px solid var(--bd);
+    text-align: center;
+    color: var(--mu);
+    font-size: .95rem
+}
+
+.logo-rod {
+    font: 700 1.3rem 'Barlow Condensed', sans-serif;
+    color: var(--tx)
+}
+
+.rod nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+    justify-content: center;
+    margin: 14px 0
+}
+
+.rod a:hover {
+    color: var(--or)
+}
+
+/* Páginas de Categoria */
+.cat {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 40px 20px 72px
+}
+
+.volta {
+    display: inline-block;
+    margin-bottom: 24px;
+    color: var(--mu)
+}
+
+.volta:hover {
+    color: var(--or)
+}
+
+.gal {
+    display: grid;
+    gap: 18px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    margin-bottom: 40px
+}
+
+/* Para Celular */
+@media(max-width:860px) {
+    .links {
+        display: none
+    }
+}
+
+@media(prefers-reduced-motion:reduce) {
+    html {
+        scroll-behavior: auto
+    }
+
+    .slide {
+        animation: none
+    }
+
+    .slide:first-child {
+        opacity: 1
+    }
+}
